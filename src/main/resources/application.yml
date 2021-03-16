@@ -1,0 +1,22 @@
+
+
+server:
+  port: 6060
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/account_service_db?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    data-username: root
+    data-password: Audio@234*
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: create-drop
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
